@@ -66,7 +66,7 @@ export default function Sidebar() {
           <p className="text-[11px] text-zinc-400 leading-relaxed font-sans">
             Batch 2024–28 • CSE–T3
             <br />
-            Supervisor: Dr. Pinky Nayak
+            Supervisor: Dr. Pinki Nayak
           </p>
         </div>
       </div>
