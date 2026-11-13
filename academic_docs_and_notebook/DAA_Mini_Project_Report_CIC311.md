@@ -1,7 +1,7 @@
 # DAA Mini Project REPORT
 ## STUDENT RECORD MANAGER
 
-**Supervisor:** Prof. (Dr.) Pinky Nayak  
+**Supervisor:** Prof. (Dr.) Pinki Nayak  
 **Department:** Department of Computer Science & Engineering  
 **Institute:** Dr. Akhilesh Das Gupta Institute of Professional Studies (Formerly ADGITM), FC-26, Shastri Park, New Delhi  
 **Affiliated to:** Guru Gobind Singh Indraprastha University (GGSIPU), Sector-16C, Dwarka, Delhi - 110075  
@@ -31,7 +31,7 @@ Dr. Akhilesh Das Gupta Institute of Professional Studies (ADGIPS), New Delhi
 
 ## ACKNOWLEDGEMENT
 
-We express our deepest sense of gratitude and sincere indebtedness to our respected supervisor, **Prof. (Dr.) Pinky Nayak**, Department of Computer Science & Engineering, for her invaluable guidance, meticulous review, continuous encouragement, and intellectual support throughout the duration of this Design and Analysis of Algorithms (CIC-311) mini project. Her constructive feedback and domain expertise were instrumental in shaping our algorithm formulations, time-complexity derivations, and system implementation.
+We express our deepest sense of gratitude and sincere indebtedness to our respected supervisor, **Prof. (Dr.) Pinki Nayak**, Department of Computer Science & Engineering, for her invaluable guidance, meticulous review, continuous encouragement, and intellectual support throughout the duration of this Design and Analysis of Algorithms (CIC-311) mini project. Her constructive feedback and domain expertise were instrumental in shaping our algorithm formulations, time-complexity derivations, and system implementation.
 
 We also convey our sincere thanks to the Department of Computer Science & Engineering and the visionary administration of **Dr. Akhilesh Das Gupta Institute of Professional Studies (ADGIPS)**, New Delhi, for providing state-of-the-art laboratory infrastructure, computational resources, and a stimulating academic ambience that enabled us to successfully test, analyze, and document this project.
 
@@ -94,7 +94,7 @@ B.Tech CSE – T3
 Modern educational environments require highly responsive, dependable, and computationally sound mechanisms for maintaining student performance archives. Historically, educational institutions relied on physical registers, manual spreadsheets, or basic tabular databases that lacked dynamic memory scaling and required linear scans for record retrieval. As academic institutions expand and student cohorts diversify across numerous departments, relying on antiquated record-keeping leads to severe operational bottlenecks, high time complexity during evaluations, data entry redundancy, and an inability to generate immediate analytical insights. In modern Computer Science and Engineering education, the Student Record Manager represents an ideal paradigm to evaluate foundational principles in Data Structures and Algorithms (DSA), demonstrating how dynamic heap memory structures, divide-and-conquer sorting, and logarithmic binary search can transform academic record administration.
 
 ### 1.2 Academic Context and Real-world Motivation
-Under the Design and Analysis of Algorithms curriculum (CIC-311), computational efficiency is not merely a theoretical concept, but an engineering mandate. In an operational college registry, records are continually inserted when new students enroll and removed when transfers or graduations occur. Utilizing static array representations imposes rigid capacity boundaries: allocating a massive array wastes heap space, whereas allocating a small array necessitates costly reallocation and element-shifting operations of order $O(n)$. Furthermore, administrative faculty frequently require fast generation of merit rankings and instant retrieval of specific student profiles by their registration roll numbers. Addressing these dual requirements demands a synthesis of linked structures for agile dynamic storage and contiguous sorted indexing for divide-and-conquer searching algorithms.
+Under the Design and Analysis of Algorithms curriculum (CIC-311), computational efficiency is not merely a theoretical concept, but an engineering mandate. In an operational college registry, records are continuously inserted when new students enroll and removed when transfers or graduations occur. Utilizing static array representations imposes rigid capacity boundaries: allocating a massive array wastes heap space, whereas allocating a small array necessitates costly reallocation and element-shifting operations of order $O(n)$. Furthermore, administrative faculty frequently require fast generation of merit rankings and instant retrieval of specific student profiles by their registration roll numbers. Addressing these dual requirements demands a synthesis of linked structures for agile dynamic storage and continuous sorted indexing for divide-and-conquer searching algorithms.
 
 ### 1.3 Problem Definition and Algorithmic Challenges
 The problem investigated in this project is formalized as follows: Design and implement an interactive, memory-efficient Student Record Management System capable of executing in Google Colab (Jupyter Notebook) and local Python execution environments, addressing the following architectural challenges:
@@ -132,9 +132,6 @@ The problem investigated in this project is formalized as follows: Design and im
 ### 2.1 Context Diagram (Level 0 DFD)
 The Context Diagram (Level 0 DFD) views the entire Student Record Manager as a single unified process (Process 0.0) interacting with external entities: the Academic User (faculty, student, or lab examiner) and the Output Visualization Engine (Matplotlib runtime). The user dispatches student records, deletion targets, and search queries into Process 0.0. In return, the system generates validated tabular displays, search telemetry (record details and comparison counts), and rendered graphical bar charts.
 
-![Figure 1: Context Diagram](report_figures/fig1_context_diagram.png)  
-*Figure 1: Context Diagram (Level 0 Data Flow Diagram)*
-
 ### 2.2 Level 1 Data Flow Diagram (DFD)
 The Level 1 Data Flow Diagram decomposes Process 0.0 into five interconnected functional sub-processes:
 - **Process 1.0 (Record Input & Validation)**: Validates incoming student attributes (ensuring valid marks range and unique roll numbers).
@@ -143,18 +140,12 @@ The Level 1 Data Flow Diagram decomposes Process 0.0 into five interconnected fu
 - **Process 4.0 (Binary Search Engine)**: Receives roll-sorted records, applies iterative bisection, and returns found node data along with comparison metrics.
 - **Process 5.0 (Performance Visualization)**: Extracts the top 5 records from marks-sorted arrays and renders a publication-ready Matplotlib plot.
 
-![Figure 2: Level 1 DFD](report_figures/fig2_level1_dfd.png)  
-*Figure 2: Level 1 Data Flow Diagram (DFD) of Student Record Manager*
-
 ---
 
 # CHAPTER 3: ER MODELING & DATA ARCHITECTURE
 
 ### 3.1 ER Model Description
-The system models two core entities: `STUDENT` and `DEPARTMENT`. The primary entity is `STUDENT`, uniquely identified by the `roll_no` primary key attribute, containing composite attributes including student name, academic marks, and an internal next pointer reference. The secondary entity is `DEPARTMENT`, characterized by `dept_code` and `dept_name`. The relationship between them is `ENROLLED_IN`, maintaining an $N:1$ cardinality.
-
-![Figure 3: ER Diagram](report_figures/fig3_er_diagram.png)  
-*Figure 3: Entity-Relationship (ER) Architecture Diagram*
+The system models two core entities: `STUDENT` and `DEPARTMENT`. The primary entity is `STUDENT`, uniquely identified by the `roll_no` primary key attribute, containing composite attributes including student name, academic marks, and an internal next pointer reference. The secondary entity is `DEPARTMENT`, characterized by `dept_code` and `dept_name`. The relationship between them is `ENROLLED_IN`, maintaining an `N:1` cardinality.
 
 #### Table 3.1: Data Dictionary: Student Entity Attributes
 | Attribute | Data Type | Constraint | Functional Description |
@@ -167,18 +158,12 @@ The system models two core entities: `STUDENT` and `DEPARTMENT`. The primary ent
 ### 3.2 Singly Linked List Data Structure & Memory Allocation
 Each `StudentNode` instance stores its own payload along with an explicit reference to the subsequent node. Insertion at the head is $O(1)$, and deletion requires merely updating the predecessor's next pointer without moving elements in memory.
 
-![Figure 5: Linked List Architecture](report_figures/fig5_linked_list_arch.png)  
-*Figure 5: Singly Linked List Dynamic Memory Architecture & Pointers*
-
 ---
 
 # CHAPTER 4: USE CASE MODELING & SPECIFICATIONS
 
 ### 4.1 Use Case Diagram Overview
 Six core use cases are identified and modeled, covering data insertion, deletion, traversal, sorting, binary search, and visualization.
-
-![Figure 4: Use Case Diagram](report_figures/fig4_use_case_diagram.png)  
-*Figure 4: Use Case Interaction Diagram of System Operations*
 
 #### Table 4.1: Use Case Specifications Summary
 | UC ID | Use Case Name | Primary Objective & Postcondition |
@@ -197,9 +182,6 @@ Six core use cases are identified and modeled, covering data insertion, deletion
 ### 5.1 Merge Sort Algorithm and Recurrence Analysis
 Merge Sort recursively decomposes an array of size $n$ into two subarrays of size $\lfloor n/2 \rfloor$ and $\lceil n/2 \rceil$, sorts each half recursively, and combines the two sorted sublists using a linear merge procedure.
 
-![Figure 6: Merge Sort Tree](report_figures/fig6_merge_sort_tree.png)  
-*Figure 6: Merge Sort Divide-and-Conquer Recurrence Tree*
-
 #### Recurrence Relation & Master Theorem Proof
 $$T(n) = 2T(n/2) + \Theta(n) \quad \text{for } n > 1$$
 $$T(1) = \Theta(1)$$
@@ -210,10 +192,6 @@ By Case 2 of the Master Theorem:
 $$T(n) = \Theta(n^{\log_b a} \log n) = \Theta(n \log n)$$
 
 ### 5.2 Binary Search Algorithm and Logarithmic Analysis
-
-![Figure 7: Binary Search Flowchart](report_figures/fig7_binary_search_flowchart.png)  
-*Figure 7: Binary Search Decision Flowchart ($O(\log n)$)*
-
 $$T(n) = T(n/2) + \Theta(1) \implies T(n) = \Theta(\log n)$$
 Maximum comparisons required: $\lceil \log_2(n + 1) \rceil$. For $n = 1000$ students, Binary Search requires at most 10 comparisons.
 
@@ -245,12 +223,7 @@ Maximum comparisons required: $\lceil \log_2(n + 1) \rceil$. For $n = 1000$ stud
 # CHAPTER 7: RESULTS AND DISCUSSIONS
 
 ### 7.1 Visualization Analysis (Top 5 Scorers Bar Chart)
-![Figure 8: Top 5 Scorers](report_figures/fig8_top_5_scorers.png)  
-*Figure 8: Matplotlib Visualization of Top 5 Scorers*
-
 ### 7.2 Empirical Performance Benchmarking: Binary vs Linear Search
-![Figure 9: Search Comparisons](report_figures/fig9_search_comparisons.png)  
-*Figure 9: Search Performance Comparison: Binary Search vs Linear Search*
 
 #### Table 7.1: Empirical Search Comparison: Linear Search vs Binary Search
 | Target Roll No | Target Student | Linear Comps | Binary Comps | Speedup |
@@ -272,7 +245,7 @@ Maximum comparisons required: $\lceil \log_2(n + 1) \rceil$. For $n = 1000$ stud
 # CHAPTER 8: CONCLUSION & FUTURE WORK
 
 ### 8.1 Summary of Project Achievements
-The CIC-311 Design and Analysis of Algorithms Mini Project titled 'Student Record Manager' was successfully designed, implemented, and validated. By combining dynamic Singly Linked Lists, Merge Sort, Binary Search, and Matplotlib data visualization, the project demonstrated how theoretical algorithm design directly solves real-world academic registry challenges.
+The CIC-311 Design and Analysis of Algorithms Mini Project titled 'Student Record Manager' was successfully designed, implemented, and validated. By combining dynamic Singly Linked Lists, Merge Sort, Binary Search, and Matplotlib data visualization, the project demonstrated how theoretical algorithm design directly solved real-world academic registry challenges.
 
 ---
 
