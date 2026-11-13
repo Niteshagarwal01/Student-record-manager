@@ -95,7 +95,7 @@ export default function Header() {
                 Project Supervisor
               </div>
               <div className="text-sm font-bold text-white mt-0.5 font-sans">
-                Prof. (Dr.) Pinky Nayak
+                Prof. (Dr.) Pinki Nayak
               </div>
               <div className="text-xs text-zinc-400 font-sans">
                 Department of Computer Science & Engineering, ADGIPS
@@ -119,7 +119,7 @@ export default function Header() {
                   <div className="text-zinc-400 font-mono text-[10px]">CSE - T3</div>
                 </div>
                 <div className="p-2.5 bg-zinc-950 border border-zinc-800 rounded-md">
-                  <div className="font-semibold text-white font-sans">Shivag Shukla</div>
+                  <div className="font-semibold text-white font-sans">Shivang Shukla</div>
                   <div className="text-zinc-400 font-mono text-[11px] mt-0.5">14915602724</div>
                   <div className="text-zinc-400 font-mono text-[10px]">CSE - T3</div>
                 </div>
