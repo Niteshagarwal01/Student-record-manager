@@ -9,11 +9,11 @@ Guru Gobind Singh Indraprastha University (GGSIPU)
 
 ## Academic Credentials
 
-* **Project Supervisor:** Prof. (Dr.) Pinky Nayak
+* **Project Supervisor:** Prof. (Dr.) Pinki Nayak
 * **Submitted By (CSE – T3):**
   * **Nitesh Agarwal** (Enrollment No: 14715602724)
   * **Himanshu Pathak** (Enrollment No: 14815602724)
-  * **Shivag Shukla** (Enrollment No: 14915602724)
+  * **Shivang Shukla** (Enrollment No: 14915602724)
 * **Academic Session:** 2024–2028 (Third Semester)
 
 ---
